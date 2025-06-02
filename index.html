@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Genius Kids</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Pantalla de Bienvenida -->
+  <section id="pantalla-bienvenida" class="pantalla">
+    <h1>🦉 Genius Kids</h1>
+    <button onclick="mostrarPantalla('pantalla-eleccion')">Comenzar</button>
+  </section>
+
+  <!-- Pantalla para elegir Iniciar Sesión o Crear Cuenta -->
+  <section id="pantalla-eleccion" class="pantalla oculto">
+    <h2>¿Tienes cuenta?</h2>
+    <button onclick="mostrarPantalla('pantalla-login')">Iniciar Sesión</button>
+    <button onclick="mostrarPantalla('pantalla-register')">Crear Cuenta</button>
+  </section>
+
+  <!-- Pantalla de Iniciar Sesión -->
+  <section id="pantalla-login" class="pantalla oculto">
+    <h2>Iniciar Sesión</h2>
+    <input type="email" id="login-email" placeholder="Correo electrónico">
+    <input type="password" id="login-password" placeholder="Contraseña">
+    <button onclick="iniciarSesion()">Entrar</button>
+  </section>
+
+  <!-- Pantalla de Crear Cuenta -->
+  <section id="pantalla-register" class="pantalla oculto">
+    <h2>Crear Cuenta</h2>
+    <input type="text" id="nombre-nino" placeholder="Nombre del niño">
+    <input type="date" id="fecha-nacimiento">
+    <input type="text" id="grado-escolar" placeholder="Grado escolar">
+    <input type="email" id="register-email" placeholder="Correo electrónico">
+    <input type="password" id="register-password" placeholder="Contraseña">
+    <button onclick="crearCuenta()">Registrarse</button>
+  </section>
+
+  <!-- Pantalla de selección de módulo -->
+  <section id="pantalla-modulos" class="pantalla oculto">
+    <h2>Selecciona un módulo</h2>
+    <button onclick="seleccionarModulo('comparacion')">Comparación</button>
+    <button onclick="seleccionarModulo('suma')">Suma</button>
+    <button onclick="seleccionarModulo('resta')">Resta</button>
+    <button onclick="seleccionarModulo('multiplicacion')">Multiplicación</button>
+    <button onclick="seleccionarModulo('division')">División</button>
+  </section>
+
+  <!-- Pantalla de selección de nivel -->
+  <section id="pantalla-niveles" class="pantalla oculto">
+    <h2>Selecciona un nivel</h2>
+    <div id="niveles-container"></div>
+  </section>
+
+  <!-- Pantalla de ejercicios -->
+  <section id="pantalla-ejercicio" class="pantalla oculto">
+    <h2 id="titulo-ejercicio">Ejercicio</h2>
+    <p id="pregunta-ejercicio"></p>
+    <div id="opciones-ejercicio"></div>
+  </section>
+
+  <!-- Pantalla de perfil -->
+  <section id="pantalla-perfil" class="pantalla oculto">
+    <h2>Perfil del Usuario</h2>
+    <img src="https://i.imgur.com/3ZQ3Z8Q.png" class="perfil-img" alt="Lechuza Hechicera">
+    <p><strong>Nombre:</strong> <span id="perfil-nombre"></span></p>
+    <p><strong>Grado Escolar:</strong> <span id="perfil-grado"></span></p>
+    <p><strong>Puntos:</strong> <span id="perfil-puntos">0</span></p>
+    <button onclick="mostrarPantalla('pantalla-modulos')">Volver a módulos</button>
+  </section>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+</body>
+</html>
